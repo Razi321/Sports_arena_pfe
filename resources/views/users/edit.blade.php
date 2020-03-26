@@ -22,7 +22,8 @@
 
 
             <div class ='form-group'>
-                {{ Form::select('role', ['A' => 'Admin', 'M' => 'Manager' , 'U' => 'User'] , null, ['placeholder' => 'Choisir le role'])}}
+                {{ Form::select('role', ['Admin' => 'Admin', 'Manager' => 'Manager' , 'User' => 'User'] , null, ['placeholder' => 'Choisir le role'])}}
+
 
             </div>
 

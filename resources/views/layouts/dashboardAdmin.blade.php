@@ -40,7 +40,7 @@
     <div id="page-content-wrapper">
 
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom">
-        <button class="btn btn-warning" id="menu-toggle">Retour page d'acceuil</button>
+      <a href="/home"><button class="btn btn-warning" id="menu-toggle">Retour page d'acceuil</button></a>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto mt-2 mt-lg-0">

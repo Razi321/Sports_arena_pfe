@@ -27,7 +27,14 @@
         <a href="/users/{{$user->id}}/edit" class="btn btn-primary">Modifier le role</a>
       </div>
       <div class="col-sm-6" >
-        <a href="/users/{{$user->id}}/edit" class="btn btn-danger">supprimer</a>
+{!!Form::open(['action'=>['UsersController@destroy' , $user->id] , 'method' =>'POST' ])!!}
+
+
+{{Form::hidden('_method' , 'DELETE')}}
+{{Form::submit('Supprimer' , ['class'=>'btn btn-danger'])}}
+{!!Form::close()!!}
+
+
       </div>
     </div>
   </div>

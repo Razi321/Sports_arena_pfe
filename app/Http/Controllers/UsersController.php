@@ -28,7 +28,7 @@ class UsersController extends Controller
      */
     public function create()
     {
-        //
+        return view('users.create');
     }
 
     /**
@@ -39,7 +39,21 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this -> validate($request ,[
+            'name' => 'required' ,
+            'email' => 'required' ,
+            'password' => 'required' ,
+            
+        ]);
+
+        //create user
+        $user = new user;
+        $user ->name =$request->input('name');
+        $user ->email =$request->input('email');
+        $user ->password =$request->input('password');
+        
+        $user->save();
+        return redirect('/users')->with('success','post created');
     }
 
     /**
@@ -75,7 +89,18 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-       //
+        $this -> validate($request ,[
+            'role' => 'required'
+
+        ]);
+
+
+        //create post
+        $user = User::find($id);
+        $user ->role =$request->input('role');
+
+        $user->save();
+        return redirect('/users')->with('success','role modifié avec succès');
 
 
     }
@@ -88,6 +113,9 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::find($id);
+
+        $user->delete();
+        return redirect('/users')->with('success','Utilisateur supprimé');
     }
 }

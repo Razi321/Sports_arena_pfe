@@ -1,6 +1,15 @@
 @extends('layouts.dashboardAdmin')
 @section('content')
-<h1>users</h1>
+<h1>Les utilisateur</h1>
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12" ">
+        <a href="/users/create" class="btn btn-primary">Ajouter utiliasateur</a>
+      </div>
+    </div>
+  </div>
+
+
 @if (count($users)> 0 )
 @foreach ($users as $user)
 
