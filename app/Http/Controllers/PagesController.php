@@ -13,4 +13,12 @@ class PagesController extends Controller
         return view('pages.dashboardManager');
     }
 
+    public function allgyms() {
+        return view('pages.allGyms');
+    }
+
+
 }
+
+
+

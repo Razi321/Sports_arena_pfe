@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <h1> les information du salle </h1>
-<h3>{{$gym->id}}</h3>
+<h3>{{$gym->adress}}</h3>
 <h3>{{$gym->name}}</h3>
 <h3>{{$gym->owner}}</h3>
 

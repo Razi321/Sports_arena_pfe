@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
+use App\Gym;
+use Illuminate\Support\Facades\View;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -24,6 +26,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+
+        View::composer('*', function ($view) {
+            $gyms = Gym::orderBy('created_at','desc')->paginate(5);
+
+            $view->with('gyms', $gyms);
+        });
         schema::defaultStringLength(191);
     }
 }

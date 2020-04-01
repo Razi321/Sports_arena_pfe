@@ -39,7 +39,8 @@ class GymController extends Controller
     {
         $this -> validate($request ,[
             'name' => 'required' ,
-            'adress' => 'required'
+            'adress' => 'required' ,
+            'price_month' => 'required'
 
 
 
@@ -77,7 +78,8 @@ class GymController extends Controller
      */
     public function edit($id)
     {
-        //
+        $gym = Gym::find($id);
+        return view('gyms.edit')->with('gym',$gym);
     }
 
     /**
@@ -89,7 +91,22 @@ class GymController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this -> validate($request ,[
+            'name' => 'required' ,
+            'adress' => 'required' ,
+            'price_month' => 'required'
+
+        ]);
+
+
+        //create post
+        $gym = Gym::find($id);
+        $gym ->name =$request->input('name');
+        $gym ->adress =$request->input('adress');
+        $gym ->price_month =$request->input('price_month');
+
+        $gym->save();
+        return redirect('/gyms')->with('success','salle de sport modifié avec succès');
     }
 
     /**
@@ -100,6 +117,9 @@ class GymController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $gym = Gym::find($id);
+
+        $gym->delete();
+        return redirect('/gyms')->with('success','salle de sport supprimé');
     }
 }
