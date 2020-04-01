@@ -1,6 +1,7 @@
 @extends('layouts.dashboardAdmin')
 @section('content')
-<h1>Les utilisateur</h1>
+<h1>Les Utilisateurs</h1>
+
 <div class="container-fluid">
     <div class="row">
       <div class="col-sm-12" ">
@@ -28,4 +29,5 @@
 @else
 <p>no post found</p>
 @endif
+
 @endsection

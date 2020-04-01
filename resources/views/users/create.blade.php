@@ -4,22 +4,22 @@
     {!!Form::open(['action' => 'UsersController@store' , 'method' => 'POST' ]) !!}
 <div class ='form-group'>
         {{Form::label('name' , 'Name')}}
-        {{Form::text('name' , '', ['class' => 'form-control'])}}
+        {{Form::text('name' , '', ['class' => 'form-control'] )}}
     </div>
 
 
-    
+
 
     <div class ='form-group'>
-        {{Form::label('email' , 'email')}}
-        {{ Form::text('email', )}}
+       {{Form::label('email' , 'email')}}
+        {{ Form::text('email' , '', ['class' => 'form-control'])}}
     </div>
-    
+
     <div class ='form-group'>
         {{Form::label('password' , 'password')}}
-        {{Form::password('password' , ['class' => 'form-control'])}}
+        {{Form::password('password' , ['class' => 'form-control']) ,csrf_field() }}
     </div>
-    
+
     {{Form::submit('submit' , ['class'=> 'btn btn-primary'])}}
     {!! Form::close() !!}
 

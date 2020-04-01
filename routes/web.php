@@ -23,3 +23,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/dashboardAdmin','PagesController@admin');
 Route::get('/dashboardManager','PagesController@manager');
 Route::resource('users','UsersController');
+Route::resource('gyms','GymController');
