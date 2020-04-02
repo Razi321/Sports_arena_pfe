@@ -40,7 +40,7 @@ class GymController extends Controller
         $this -> validate($request ,[
             'name' => 'required' ,
             'adress' => 'required' ,
-            'price_month' => 'required'
+
 
 
 
@@ -99,7 +99,6 @@ class GymController extends Controller
         ]);
 
 
-        //create post
         $gym = Gym::find($id);
         $gym ->name =$request->input('name');
         $gym ->adress =$request->input('adress');

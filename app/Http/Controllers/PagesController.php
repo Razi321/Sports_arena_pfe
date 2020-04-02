@@ -9,8 +9,8 @@ class PagesController extends Controller
     public function admin() {
         return view('pages.dashboardAdmin');
     }
-    public function manager() {
-        return view('pages.dashboardManager');
+    public function owner() {
+        return view('pages.dashboardOwner');
     }
 
     public function allgyms() {
