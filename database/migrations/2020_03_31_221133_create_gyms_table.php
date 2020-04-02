@@ -19,9 +19,9 @@ class CreateGymsTable extends Migration
             $table->string('adress');
             $table->float('price_month')->nullable();
             $table->float('price_session')->nullable();
-            $table->integer('owner');
-            $table->integer('manager')->nullable();
-            $table->integer('coach')->nullable();
+            $table->float('owner');
+            $table->float('manager')->nullable();
+            $table->float('coach')->nullable();
             $table->timestamps();
         });
     }

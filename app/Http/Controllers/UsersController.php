@@ -43,7 +43,7 @@ class UsersController extends Controller
             'name' => 'required' ,
             'email' => 'required' ,
             'password' => 'required' ,
-            
+
         ]);
 
         //create user
@@ -51,7 +51,7 @@ class UsersController extends Controller
         $user ->name =$request->input('name');
         $user ->email =$request->input('email');
         $user ->password =$request->input('password');
-        
+
         $user->save();
         return redirect('/users')->with('success','post created');
     }
@@ -118,4 +118,6 @@ class UsersController extends Controller
         $user->delete();
         return redirect('/users')->with('success','Utilisateur supprimé');
     }
+
+
 }

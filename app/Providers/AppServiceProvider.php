@@ -6,6 +6,8 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 use App\Gym;
 use Illuminate\Support\Facades\View;
+use phpDocumentor\Reflection\Types\Integer;
+use \Illuminate\Http\Response;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -24,11 +26,15 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
+
     public function boot()
     {
 
-        View::composer('*', function ($view) {
+
+        View::composer( '*', function ($view) {
+
             $gyms = Gym::orderBy('created_at','desc')->paginate(5);
+
 
             $view->with('gyms', $gyms);
         });

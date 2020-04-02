@@ -4,7 +4,7 @@
 <h3>{{$gym->adress}}</h3>
 <h3>{{$gym->name}}</h3>
 <h3>{{$gym->owner}}</h3>
-
+@if(Auth::user()->id == $gym->owner)
   <div class="container-fluid">
     <div class="row">
       <div class="col-sm-6" ">
@@ -22,5 +22,5 @@
       </div>
     </div>
   </div>
-
+@endif
 @endsection
