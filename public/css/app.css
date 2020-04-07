@@ -52,6 +52,20 @@ body {
 }
 
 body {
-  background-color: #b2bec3;
+  background-color: #eeeeee;
+}
+
+.navlink {
+  color: white;
+  padding-right: 10px;
+}
+
+.navlink:hover {
+  color: yellow;
+  text-decoration: none;
+}
+
+.yellowbackgroud {
+  background-color: #ffc107;
 }
 

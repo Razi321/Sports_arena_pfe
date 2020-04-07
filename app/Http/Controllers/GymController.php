@@ -93,8 +93,8 @@ class GymController extends Controller
     {
         $this -> validate($request ,[
             'name' => 'required' ,
-            'adress' => 'required' ,
-            'price_month' => 'required'
+            'adress' => 'required'
+
 
         ]);
 

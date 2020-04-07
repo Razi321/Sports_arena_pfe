@@ -16,8 +16,8 @@
     </div>
 
     <div class ='form-group'>
-        {{Form::label('month_price' , 'month_price')}}
-        {{Form::text('month_price' , null , ['class' => 'form-control'])}}
+        {{Form::label('price_month' , 'price_month')}}
+        {{Form::text('price_month' ,  null , ['class' => 'form-control'])}}
     </div>
 
     {{Form::submit('submit' , ['class'=> 'btn btn-primary'])}}

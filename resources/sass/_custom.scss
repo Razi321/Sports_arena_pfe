@@ -49,7 +49,23 @@
     }
   }
   body{
-      background-color: #b2bec3;
+      background-color: #eeeeee;
   }
+  .navlink{
+    color: $navlink;
+    padding-right: 10px;
+
+
+    &:hover{
+        color: yellow;
+        text-decoration: none;
+    }
+}
+
+.yellowbackgroud {
+    background-color: $yellowcolor;
+}
+
+
 
 

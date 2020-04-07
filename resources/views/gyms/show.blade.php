@@ -4,10 +4,14 @@
 <h3>{{$gym->adress}}</h3>
 <h3>{{$gym->name}}</h3>
 <h3>{{$gym->owner}}</h3>
+
+
+
+
 @if(Auth::user()->id == $gym->owner)
   <div class="container-fluid">
     <div class="row">
-      <div class="col-sm-6" ">
+      <div class="col-sm-6" >
         <a href="/gyms/{{$gym->id}}/edit" class="btn btn-primary">Modifier le role</a>
       </div>
       <div class="col-sm-6" >
@@ -22,5 +26,21 @@
       </div>
     </div>
   </div>
+@else
+
+@if(Auth::user()->role='Admin')
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-6" >
+{!!Form::open(['action'=>['GymController@destroy' , $gym->id] , 'method' =>'POST' ])!!}
+{{Form::hidden('_method' , 'DELETE')}}
+{{Form::submit('Supprimer' , ['class'=>'btn btn-danger'])}}
+{!!Form::close()!!}
+
+        </div>
+
+</div>
+  </div>
+  @endif
 @endif
 @endsection
