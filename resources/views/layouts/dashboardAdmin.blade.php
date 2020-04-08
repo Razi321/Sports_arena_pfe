@@ -30,9 +30,9 @@
         <a href="/dashboardAdmin" class="list-group-item list-group-item-action bg-light">accueil</a>
         <a href="/users" class="list-group-item list-group-item-action bg-light">Utilisateurs</a>
         <a href="/gyms" class="list-group-item list-group-item-action bg-light">salles de sport</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Events</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Profile</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Status</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light">item</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light">item</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light">item</a>
       </div>
     </div>
     <!-- /#sidebar-wrapper -->
