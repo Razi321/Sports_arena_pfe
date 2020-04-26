@@ -11,6 +11,7 @@
 
 body {
   overflow-x: hidden;
+  background-color: #a4b0be;
 }
 
 #sidebar-wrapper {
@@ -51,10 +52,6 @@ body {
   }
 }
 
-body {
-  background-color: #eeeeee;
-}
-
 .navlink {
   color: white;
   padding-right: 10px;
@@ -67,5 +64,9 @@ body {
 
 .yellowbackgroud {
   background-color: #ffc107;
+}
+
+.gymcard {
+  margin: 5px;
 }
 

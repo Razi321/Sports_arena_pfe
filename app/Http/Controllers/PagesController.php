@@ -18,11 +18,10 @@ class PagesController extends Controller
     }
 
 
-    public function gymOwnerView() {
-        return view('gyms.gymOwnerView');
+
+    public function userprofile() {
+        return view('pages.userprofile');
     }
-
-
 }
 
 

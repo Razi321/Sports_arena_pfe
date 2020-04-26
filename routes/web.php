@@ -26,5 +26,5 @@ Route::resource('users','UsersController');
 Route::resource('gyms','GymController');
 Route::get('/allGyms','PagesController@allgyms');
 
-Route::get('/gymOwnerView','PagesController@gymOwnerView');
+Route::get('/userprofile','PagesController@userprofile');
 

@@ -1,12 +1,103 @@
 @extends('layouts.app')
 @section('content')
-<h1> les information du salle </h1>
-<h3>{{$gym->adress}}</h3>
-<h3>{{$gym->name}}</h3>
-<h3>{{$gym->owner}}</h3>
+<img style="width:100% " src="/storage/cover_images/{{$gym->cover_image}}">
 
 
 
+
+
+    <div class="row">
+        <div class="col-md-4 col-sm-4 ">
+            <div class="card gymcard">
+                <div class="card-header">Information</div>
+
+                <div class="card-body">
+
+                     {{--home info--}}
+                 <div>
+                    <i  class="fa fa-home"  style="font-size:30px">  : </i>
+                </div>
+                {{-- end home info--}}
+<hr>
+                   {{--phone num --}}
+                 <div>
+                    <i class="fa fa-phone-square"style="font-size:30px"> : </i>
+                </div>
+                {{-- end phone nim --}}
+
+                <hr>
+                 {{--instagram link--}}
+                 <div>
+                    <i class="fa fa-instagram" style="font-size:30px"> : </i>
+                    <a href="https://www.instagram.com/razimelliti/?hl=fr"></a>
+                </div>
+                {{-- end instagram link--}}
+                <hr>
+                {{--facebook link--}}
+                <div>
+                    <i class="fa fa-facebook-square" style="font-size:30px"> : </i>
+                    <a href="https://www.facebook.com/rmelliti/"></a>
+                </div>
+                {{-- end facebook link--}}
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="col-md-8 col-sm-8">
+            <div class="card gymcard">
+                <div class="card-header"> à propos de nous</div>
+
+                <div class="card-body">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div >
+    <div class="card gymcard">
+        <div class="card-header">Information</div>
+
+        <div class="card-body">
+           hghghghg
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{--owner view--}}
 
 @if(Auth::user()->id == $gym->owner)
   <div class="container-fluid">
@@ -26,9 +117,12 @@
       </div>
     </div>
   </div>
+  {{-- end owner view--}}
 @else
 
-@if(Auth::user()->role='Admin')
+{{-- admin view--}}
+
+@if(Auth::user()->role =='Admin')
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-6" >
@@ -41,6 +135,11 @@
 
 </div>
   </div>
-  @endif
+{{--end admin view--}}
 @endif
+@endif
+
+<h3>{{$gym->adress}}</h3>
+<h3>{{$gym->name}}</h3>
+<h3>{{$gym->owner}}</h3>
 @endsection

@@ -7,6 +7,7 @@
 @import url(c:\Users\Razi\Desktop\test\Sports_arena\resources\sass\bootstrap.min.css);
 body {
   overflow-x: hidden;
+  background-color: #a4b0be;
 }
 
 #sidebar-wrapper {
@@ -46,15 +47,21 @@ body {
   }
 }
 
-body {
-  background-color: #b2bec3;
-}
-
 .navlink {
   color: white;
+  padding-right: 10px;
 }
 
 .navlink:hover {
   color: yellow;
+  text-decoration: none;
+}
+
+.yellowbackgroud {
+  background-color: #ffc107;
+}
+
+.gymcard {
+  margin: 5px;
 }
 /*# sourceMappingURL=app.css.map */
