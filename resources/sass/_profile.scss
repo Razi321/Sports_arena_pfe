@@ -1,0 +1,29 @@
+/*
+*
+* ==========================================
+* CUSTOM UTIL CLASSES
+* ==========================================
+*
+*/
+.profile-header {
+    transform: translateY(5rem);
+}
+
+
+/*
+*
+* ==========================================
+* FOR DEMO PURPOSE
+* ==========================================
+*
+*/
+body {
+
+    background: -webkit-linear-gradient(to right,  #eaafc8);
+    background: linear-gradient(to right, #eaafc8);
+    min-height: 100vh;
+}
+
+.tabspec{
+    font-weight: bold;
+}

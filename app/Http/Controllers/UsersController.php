@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\User;
 
 class UsersController extends Controller
@@ -43,15 +44,33 @@ class UsersController extends Controller
             'name' => 'required' ,
             'email' => 'required' ,
             'password' => 'required' ,
+            'profile_img' => 'image|nullable|max:1999'
 
         ]);
+
+        // Handle File Upload
+        if($request->hasFile('profile_img')){
+            // Get filename with the extension
+            $filenameWithExt = $request->file('profile_img')->getClientOriginalName();
+            // Get just filename
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            // Get just ext
+            $extension = $request->file('profile_img')->getClientOriginalExtension();
+            // Filename to store
+            $fileNameToStore= $filename.'_'.time().'.'.$extension;
+            // Upload Image
+            $path = $request->file('profile_img')->storeAs('public/cover_images', $fileNameToStore);
+        } else {
+            $fileNameToStore = 'noimage.jpg';
+        }
+
 
         //create user
         $user = new user;
         $user ->name =$request->input('name');
         $user ->email =$request->input('email');
         $user ->password =$request->input('password');
-
+        $user->profile_img = $fileNameToStore;
         $user->save();
         return redirect('/users')->with('success','post created');
     }
@@ -93,11 +112,33 @@ class UsersController extends Controller
             'role' => 'required'
 
         ]);
+        $user = User::find($id);
+
+        // Handle File Upload
+        if($request->hasFile('profile_img')){
+           // Get filename with the extension
+           $filenameWithExt = $request->file('profile_img')->getClientOriginalName();
+           // Get just filename
+           $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+           // Get just ext
+           $extension = $request->file('profile_img')->getClientOriginalExtension();
+           // Filename to store
+           $fileNameToStore= $filename.'_'.time().'.'.$extension;
+           // Upload Image
+           $path = $request->file('profile_img')->storeAs('public/profile_img', $fileNameToStore);
+           // Delete file if exists
+           Storage::delete('public/cover_images/'.$user->profile_img);
+       }
+
 
 
         //create post
         $user = User::find($id);
         $user ->role =$request->input('role');
+        if($request->hasFile('profile_img')){
+            $user->profile_img= $fileNameToStore;
+        }
+
 
         $user->save();
         return redirect('/users')->with('success','role modifié avec succès');
@@ -114,6 +155,11 @@ class UsersController extends Controller
     public function destroy($id)
     {
         $user = User::find($id);
+
+        if($user->profile_img != 'noimage.jpg'){
+            // Delete Image
+            Storage::delete('public/cover_images/'.$user->profile_img );
+        }
 
         $user->delete();
         return redirect('/users')->with('success','Utilisateur est supprimé');
