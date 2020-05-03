@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    @if (Auth::User()->role == 'Admin'|| Auth::User()->role == 'Owner' )
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
@@ -20,7 +20,7 @@
 </head>
 
 <body>
-
+    @if (Auth::User()->role != 'User' )
   <div class="d-flex" id="wrapper">
 
     <!-- Sidebar -->
@@ -57,11 +57,6 @@
 </div>
 
   </div>
-
-  @else
-  <h1>404</h1>
-
-
 
   @endif
 </body>

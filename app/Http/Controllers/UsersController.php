@@ -44,25 +44,25 @@ class UsersController extends Controller
             'name' => 'required' ,
             'email' => 'required' ,
             'password' => 'required' ,
-            'profile_img' => 'image|nullable|max:1999'
+            'cover_image' => 'image|nullable|max:1999'
 
         ]);
 
-        // Handle File Upload
-        if($request->hasFile('profile_img')){
-            // Get filename with the extension
-            $filenameWithExt = $request->file('profile_img')->getClientOriginalName();
-            // Get just filename
-            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
-            // Get just ext
-            $extension = $request->file('profile_img')->getClientOriginalExtension();
-            // Filename to store
-            $fileNameToStore= $filename.'_'.time().'.'.$extension;
-            // Upload Image
-            $path = $request->file('profile_img')->storeAs('public/cover_images', $fileNameToStore);
-        } else {
-            $fileNameToStore = 'noimage.jpg';
-        }
+       // Handle File Upload
+       if($request->hasFile('cover_image')){
+        // Get filename with the extension
+        $filenameWithExt = $request->file('cover_image')->getClientOriginalName();
+        // Get just filename
+        $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+        // Get just ext
+        $extension = $request->file('cover_image')->getClientOriginalExtension();
+        // Filename to store
+        $fileNameToStore= $filename.'_'.time().'.'.$extension;
+        // Upload Image
+        $path = $request->file('cover_image')->storeAs('public/cover_images', $fileNameToStore);
+    } else {
+        $fileNameToStore = 'noimage.jpg';
+    }
 
 
         //create user
@@ -70,7 +70,7 @@ class UsersController extends Controller
         $user ->name =$request->input('name');
         $user ->email =$request->input('email');
         $user ->password =$request->input('password');
-        $user->profile_img = $fileNameToStore;
+        $user->cover_image = $fileNameToStore;
         $user->save();
         return redirect('/users')->with('success','post created');
     }
@@ -108,40 +108,49 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this -> validate($request ,[
-            'role' => 'required'
 
-        ]);
         $user = User::find($id);
 
         // Handle File Upload
-        if($request->hasFile('profile_img')){
-           // Get filename with the extension
-           $filenameWithExt = $request->file('profile_img')->getClientOriginalName();
-           // Get just filename
-           $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
-           // Get just ext
-           $extension = $request->file('profile_img')->getClientOriginalExtension();
-           // Filename to store
-           $fileNameToStore= $filename.'_'.time().'.'.$extension;
-           // Upload Image
-           $path = $request->file('profile_img')->storeAs('public/profile_img', $fileNameToStore);
-           // Delete file if exists
-           Storage::delete('public/cover_images/'.$user->profile_img);
-       }
+        if($request->hasFile('cover_image')){
+            // Get filename with the extension
+            $filenameWithExt = $request->file('cover_image')->getClientOriginalName();
+            // Get just filename
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            // Get just ext
+            $extension = $request->file('cover_image')->getClientOriginalExtension();
+            // Filename to store
+            $fileNameToStore= $filename.'_'.time().'.'.$extension;
+            // Upload Image
+            $path = $request->file('cover_image')->storeAs('public/cover_images', $fileNameToStore);
+            // Delete file if exists
+            Storage::delete('public/cover_images/'.$user->cover_image);
+        }
 
 
 
         //create post
-        $user = User::find($id);
+
         $user ->role =$request->input('role');
-        if($request->hasFile('profile_img')){
-            $user->profile_img= $fileNameToStore;
+        $user ->name =$request->input('name');
+        $user ->email =$request->input('email');
+        $user ->sexe =$request->input('sexe');
+        $user ->adresse =$request->input('adresse');
+        $user ->date_of_birth =$request->input('date_of_birth');
+
+        if($request->hasFile('cover_image')){
+            $user->cover_image = $fileNameToStore;
         }
 
 
         $user->save();
-        return redirect('/users')->with('success','role modifié avec succès');
+if(auth()->user()->role =='Admin') {
+    return redirect('/users')->with('success',' modifié avec succès');
+}
+else
+return redirect('/home')->with('success',' modifié avec succès');
+
+
 
 
     }
@@ -156,9 +165,10 @@ class UsersController extends Controller
     {
         $user = User::find($id);
 
-        if($user->profile_img != 'noimage.jpg'){
+
+        if($user->cover_image != 'noimage.jpg'){
             // Delete Image
-            Storage::delete('public/cover_images/'.$user->profile_img );
+            Storage::delete('public/cover_images/'.$user->cover_image);
         }
 
         $user->delete();
