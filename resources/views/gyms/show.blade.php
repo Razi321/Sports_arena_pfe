@@ -72,31 +72,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 {{--owner view--}}
 
 @if(Auth::user()->id == $gym->owner)
@@ -139,7 +114,20 @@
 @endif
 @endif
 
-<h3>{{$gym->adress}}</h3>
-<h3>{{$gym->name}}</h3>
-<h3>{{$gym->owner}}</h3>
+<div >
+    <div class="card gymcard">
+        <div class="card-header">feedbacks</div>
+
+        <div class="card-body">
+            @if(Auth::user()->member_in == $gym->id)
+            @include('feedback.create')
+            @endif
+            <br>
+            @include('feedback.show')
+
+
+        </div>
+    </div>
+</div>
+</div>
 @endsection

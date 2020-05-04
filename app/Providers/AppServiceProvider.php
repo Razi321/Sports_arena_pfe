@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Schema;
 
 use App\Gym;
 use App\User;
-
+use App\Feedback;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
 use phpDocumentor\Reflection\Types\Integer;
@@ -36,6 +36,22 @@ class AppServiceProvider extends ServiceProvider
     {
 
 
+        View::composer( '*', function ($view) {
+
+            $feedbacks = Feedback::orderBy('created_at','desc')->paginate(5);
+
+
+            $view->with('feedback', $feedbacks);
+        });
+
+
+        View::composer( '*', function ($view) {
+
+            $users = User::orderBy('created_at','desc')->paginate(5);
+
+
+            $view->with('users', $users);
+        });
 
 
 

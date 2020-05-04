@@ -32,7 +32,7 @@
                     @endif
                 @else
                     <li class="nav-item dropdown">
-                        <img src="/storage/cover_images/{{auth::user()->cover_image}}"  style="width:32px; height:32px; position:absolute; top:10px; margin-left: 150px;; border-radius:50%">
+                        <img src="/storage/cover_images/{{auth::user()->cover_image}}"  style="width:32px; height:32px; position:absolute; top:10px; margin-left: 100px;; border-radius:50%">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
 
 
@@ -41,7 +41,11 @@
 
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-
+                            @if(Auth::user()->role != 'User')
+                            <a class="dropdown-item fa  fa-tachometer" href="/dashboardAdmin">
+                                {{ __('tableau de bord') }}
+                            </a>
+                            @endif
                             <a class="dropdown-item fa fa-user" href="/userprofile">
                                 {{ __('profile') }}
                             </a>

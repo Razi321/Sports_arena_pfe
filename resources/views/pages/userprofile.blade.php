@@ -9,7 +9,7 @@
                     <div class="profile mr-3"><img src="/storage/cover_images/{{auth::user()->cover_image}}"  alt="..." width="130" class="rounded mb-2 img-thumbnail"><a href="/users/{{auth::user()->id}}/edit" class="btn btn-dark btn-sm btn-block">Edit profile</a></div>
                     <div class="media-body mb-5 text-white">
                     <h4 class="mt-0 mb-0">{{auth::user()->name}}</h4>
-                        <p class="small mb-4"> <i class="fa fa-map-marker mr-2"></i>San Farcisco</p>
+                        <p class="small mb-4"> <i class="fa fa-map-marker mr-2"></i>{{auth::user()->adresse}}</p>
                     </div>
                 </div>
             </div>
@@ -42,19 +42,22 @@
                         <td>{{auth::user()->email}}</td>
 
                       </tr>
-                      <tr>
-                        <td class="tabspec">Sexe</td>
-                        <td>homme</td>
 
-                      </tr>
+                        <tr>
+                            <td class="tabspec">Sexe</td>
+                            <td >{{auth::user()->sexe}}</td>
+
+                          </tr>
+
+
                       <tr>
-                        <td class="tabspec" >Date de naissance </td>
-                        <td>15/02/1998</td>
+                        <td class="tabspec">Date de naissance</td>
+                        <td >{{auth::user()->date_of_birth}}</td>
 
                       </tr>
                       <tr>
                         <td class="tabspec">Adresse</td>
-                        <td>tunis</td>
+                        <td >{{auth::user()->adresse}}</td>
 
                       </tr>
                       <tr>

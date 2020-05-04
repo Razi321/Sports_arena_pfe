@@ -18,4 +18,8 @@ class Gym extends Model
     return $this->belongsTo('App\User');
 }
 
+public function feedback(){
+    return $this->hasMany('App\Feedback');
+}
+
 }

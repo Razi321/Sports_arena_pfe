@@ -45,7 +45,7 @@
 
                       <tr>
                         <td class="tabspec">Adresse</td>
-                        <td >{{$user->Adresse}}</td>
+                        <td >{{$user->adresse}}</td>
 
                       </tr>
 

@@ -145,7 +145,7 @@ class UsersController extends Controller
 
         $user->save();
 if(auth()->user()->role =='Admin') {
-    return redirect('/users')->with('success',' modifié avec succès');
+    return back();
 }
 else
 return redirect('/home')->with('success',' modifié avec succès');
