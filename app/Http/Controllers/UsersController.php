@@ -3,11 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
 use Illuminate\Support\Facades\Storage;
 use App\User;
+use App\Feedback;
 
 class UsersController extends Controller
 {
+
+
+
     /**
      * Display a listing of the resource.
      *
@@ -72,7 +77,7 @@ class UsersController extends Controller
         $user ->password =$request->input('password');
         $user->cover_image = $fileNameToStore;
         $user->save();
-        return redirect('/users')->with('success','post created');
+        return redirect('/users')->with('success','utilisateur bien ajouté');
     }
 
     /**
@@ -81,10 +86,11 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id , Feedback $feedback)
     {
         $user = User::find($id);
-        return view('users.show')->with('user',$user);
+        return view('users.show')->with('user',$user
+        );
     }
 
     /**
@@ -108,6 +114,12 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $this -> validate($request ,[
+            'name' => ['required',  'min:3'],
+            'email' => 'required'
+
+
+        ]);
 
         $user = User::find($id);
 
@@ -172,8 +184,14 @@ return redirect('/home')->with('success',' modifié avec succès');
         }
 
         $user->delete();
-        return redirect('/users')->with('success','Utilisateur est supprimé');
+        if($user->role =='Admin') {
+            return redirect('/users')->with('success','le compte est supprimé');
+        }
+        else
+
+        return redirect('/register')->with('success','le compte est supprimé');
     }
 
 
 }
+

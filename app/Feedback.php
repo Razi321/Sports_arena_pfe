@@ -15,6 +15,12 @@ class Feedback extends Model
 
 
    public function gym(){
-    return $this->belongsTo('App\Gym');
+    return $this->belongsTo('App\Gym','belongs_to');
+}
+public function usersfeed(){
+    return $this->belongsTo('App\User','user_id');
 }
 }
+
+
+

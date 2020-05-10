@@ -16,7 +16,7 @@ class AddFeedbacksTable extends Migration
           Schema::create('feedbacks', function (Blueprint $table) {
             $table->increments('id');
             $table->mediumText('body');
-            $table->integer('user_id');
+            $table->integer('user_id')->unsigned();
             $table->timestamps();
         });
     }

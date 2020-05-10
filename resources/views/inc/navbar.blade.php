@@ -41,6 +41,19 @@
 
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+
+                            @if(Auth::user()->member_in != '0')
+                            @foreach($gyms as $gym)
+                            @if ($gym->id == Auth::user()->member_in)
+                            <a class="dropdown-item fa fa-hand-grab-o"  href="/gyms/{{$gym->id}}">
+                                {{ __('salle de sport') }}
+                            </a>
+
+                            @endif
+                            @endforeach
+
+                            @endif
+
                             @if(Auth::user()->role != 'User')
                             <a class="dropdown-item fa  fa-tachometer" href="/dashboardAdmin">
                                 {{ __('tableau de bord') }}

@@ -124,8 +124,6 @@
             @endif
             <br>
             @include('feedback.show')
-
-
         </div>
     </div>
 </div>

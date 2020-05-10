@@ -1,24 +1,37 @@
 
 
-    <a href="/feedback/create"><button >ajouter feedback</button></a>
-    <h1>feedbacks</h1>
-    @if(count($feedbacks) > 0)
-        @foreach($feedbacks as $feedback)
 
-                <div class="row">
-                    <p>{{$feedback->body}}</p>
-                    <small>
-                        <h2 >   <a href="/feedback/{{$feedback->id}}"> {{$feedback->user_id}}</a></h2>
+@extends('layouts.dashboardAdmin')
+@section('content')
+<h1>feedbackq</h1>
 
-                    </small>
-                </div>
-    <hr>
-
-        @endforeach
-        {{$feedbacks->links()}}
-    @else
-        <p>No feedbacks</p>
-    @endif
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12" ">
+        <a href="/users/create" class="btn btn-primary">Ajouter utiliasateur</a>
+      </div>
+    </div>
+  </div>
 
 
+  @if(count($feedbacks) > 0)
+  @foreach($feedbacks as $feedback)
+
+    <div class ='card p-3 mt-3 mb-3'>
+            <h2 >   <a href="/gyms/{{$feedback->belongs_to}}">{{$feedback->body}}</a></h2>
+            <small>Written on {{$feedback->created_at}} </small>
+            
+
+
+
+    </div>
+@endforeach
+{{$feedbacks->links()}}
+
+
+@else
+<p>no feedbacks found</p>
+@endif
+
+@endsection
 

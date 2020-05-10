@@ -4,12 +4,10 @@
       <div class="col-sm-8" >
         <p style="font-weight: bold;">{{$feedback->body}}</p>
         <small> Ecrit le {{$feedback->created_at}} par
-            @foreach($users as $user)
-            @if ($user->id == $feedback->user_id)
-            {{$user->name}}
+            {{ $feedback->usersfeed->name }}
 
-            @endif
-            @endforeach
+
+
         </small>
       </div>
       <div class="col-sm-4" >
@@ -24,6 +22,7 @@
       </div>
     </div>
 <hr>
+
 
     @endforeach
 

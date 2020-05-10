@@ -37054,6 +37054,13 @@ module.exports = function(module) {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+function myFunction() {
+  if (confirm("Confirm message")) {// do stuff
+  } else {
+    return false;
+  }
+}
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":

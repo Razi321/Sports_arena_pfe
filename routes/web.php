@@ -25,6 +25,7 @@ Route::get('/dashboardOwner','PagesController@Owner');
 Route::resource('users','UsersController');
 Route::resource('gyms','GymController');
 Route::resource('feedback','FeedbacksController');
+Route::resource('courses','CoursesController');
 Route::get('/allGyms','PagesController@allgyms');
 
 Route::get('/userprofile','PagesController@userprofile');

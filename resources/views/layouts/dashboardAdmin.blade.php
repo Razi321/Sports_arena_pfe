@@ -30,8 +30,8 @@
         <a href="/dashboardAdmin" class="list-group-item list-group-item-action bg-light">accueil</a>
         <a href="/users" class="list-group-item list-group-item-action bg-light">Utilisateurs</a>
         <a href="/gyms" class="list-group-item list-group-item-action bg-light">salles de sport</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">item</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">item</a>
+        <a href="/feedback" class="list-group-item list-group-item-action bg-light">gerer les avis</a>
+        <a href="/courses" class="list-group-item list-group-item-action bg-light">gerer les cours</a>
         <a href="#" class="list-group-item list-group-item-action bg-light">item</a>
       </div>
     </div>

@@ -15,10 +15,10 @@
             </div>
 
             <div class="bg-light p-4 d-flex justify-content-end text-center">
-                {!!Form::open(['action'=>['UsersController@destroy' , auth::user()->id] , 'method' =>'POST' ])!!}
+                {!!Form::open(['action'=>['UsersController@destroy' , auth::user()->id] , 'method' =>'POST' , 'onsubmit' => 'return confirm("voulez-vous vraiment supprimer le compte?");'])!!}
 
                 {{Form::hidden('_method' , 'DELETE')}}
-                {{Form::submit('Supprimer' , ['class'=>'btn btn-danger'])}}
+                {{Form::submit('Supprimer' , ['class'=>'btn btn-danger'] )}}
                 {!!Form::close()!!}
             </div>
 
