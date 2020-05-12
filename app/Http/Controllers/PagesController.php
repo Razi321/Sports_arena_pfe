@@ -22,6 +22,13 @@ class PagesController extends Controller
     public function userprofile() {
         return view('pages.userprofile');
     }
+
+    public function managers() {
+        return view('users.managers');
+    }
+    public function statistics() {
+        return view('statistics.statistics');
+    }
 }
 
 

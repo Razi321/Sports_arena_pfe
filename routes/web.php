@@ -24,9 +24,12 @@ Route::get('/dashboardAdmin','PagesController@admin');
 Route::get('/dashboardOwner','PagesController@Owner');
 Route::resource('users','UsersController');
 Route::resource('gyms','GymController');
+Route::resource('memberships','MembershipsController');
 Route::resource('feedback','FeedbacksController');
 Route::resource('courses','CoursesController');
 Route::get('/allGyms','PagesController@allgyms');
+Route::get('/managers','PagesController@managers');
+Route::get('/statistics','PagesController@statistics');
 
 Route::get('/userprofile','PagesController@userprofile');
 

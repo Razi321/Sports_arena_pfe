@@ -71,7 +71,7 @@
 
                       </tr>
                       <tr>
-                        <td class="tabspec" >{{Form::label('date_of_birth' , 'Adresse email')}}</td>
+                        <td class="tabspec" >{{Form::label('date_of_birth' , 'date de naissance')}}</td>
                         <td><div class ='form-group'>
 
                             {{Form::text('date_of_birth' , $user->date_of_birth, ['class' => 'form-control' , 'placeholder' => 'AAAA/MM/JJ'])}} </div></td>
@@ -90,7 +90,15 @@
                         <td >
                             <div class ='form-group'>
 
-                            {{Form::text('role' , $user->role, ['class' => 'form-control' , 'placeholder' => 'name'])}}</td>
+                            {!! Form::select('role',['Owner' => 'Propriétaire','Manager'=>'Gérant','User'=>'Utilisateur'],null,['class'=>'form-control','placeholder'=>'Choisir le Role']) !!}
+                      </tr>
+
+
+                      <tr>
+                        <td class="tabspec" >{{Form::label('member_in' , 'membre a ')}}</td>
+                        <td><div class ='form-group'>
+
+                            {{Form::text('member_in' , $user->member_in, ['class' => 'form-control' , 'placeholder' => 'identifiant du salle'])}} </div></td>
 
                       </tr>
 
@@ -113,6 +121,9 @@
             {{Form::hidden('_method' , 'PUT')}}
             {{Form::submit('submit' , ['class'=> 'btn btn-success'])}}
             {!! Form::close() !!}
+
+
+
 @endsection
 
 

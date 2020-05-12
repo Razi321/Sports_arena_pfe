@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Storage;
 use App\User;
+use App\Gym;
 use App\Feedback;
 
 class UsersController extends Controller
@@ -20,8 +21,6 @@ class UsersController extends Controller
      */
     public function index()
     {
-       // $users = User::orderBy('created_at','desc');
-      // return view('users.index');
      $users = User::orderBy('created_at','desc')->paginate(5);
 
      return view('users.index')->with('users', $users);
@@ -86,11 +85,10 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id , Feedback $feedback)
+    public function show($id )
     {
         $user = User::find($id);
-        return view('users.show')->with('user',$user
-        );
+        return view('users.show')->with('user',$user);
     }
 
     /**
@@ -145,6 +143,7 @@ class UsersController extends Controller
 
         $user ->role =$request->input('role');
         $user ->name =$request->input('name');
+        $user ->member_in = $request->input('member_in');
         $user ->email =$request->input('email');
         $user ->sexe =$request->input('sexe');
         $user ->adresse =$request->input('adresse');
@@ -155,12 +154,12 @@ class UsersController extends Controller
         }
 
 
-        $user->save();
-if(auth()->user()->role =='Admin') {
-    return back();
-}
-else
-return redirect('/home')->with('success',' modifié avec succès');
+                    $user->save();
+            if(auth()->user()->role =='Admin') {
+                return redirect('/users')->with('success',' Role modifié avec succès');
+            }
+            else
+            return redirect('/home')->with('success',' Role modifié avec succès');
 
 
 

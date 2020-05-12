@@ -68,5 +68,5 @@
                     </tbody>
                   </table>
             </div>
-
+            @include('memberships.create')
 @endsection

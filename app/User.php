@@ -48,7 +48,10 @@ class User extends Authenticatable
         return $this->hasMany('App\Feedback');
     }
     public function gymsowner(){
-        return $this->hasMany('App\Gym');
+        return $this->hasMany('App\Gym','id');
     }
-
+    public function memberships()
+    {
+        return $this->hasMany('App\Membership');
+    }
 }
