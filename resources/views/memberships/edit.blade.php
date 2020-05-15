@@ -12,7 +12,7 @@
             </div>
             <div class ='form-group'>
                 {{Form::label('end_at' , 'fin abonnement')}}
-                {{Form::text('end_at' , $membership->end_at, ['class' => 'form-control' , 'placeholder' => 'owner'])}}
+                {{Form::text('end_at' , $membership->end_at, ['class' => 'form-control'])}}
             </div>
             @foreach ($course as $course)
   <p>cour : {{$course->name}} et identifiant : {{$course->id_course}}</p>

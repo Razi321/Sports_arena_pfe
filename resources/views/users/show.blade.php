@@ -68,5 +68,16 @@
                     </tbody>
                   </table>
             </div>
+            <div>
+
+
+                @foreach ($user->memberships as $memberships)
+            <p>{{$memberships->id}}</p>
+            <p>{{$memberships->course_id}}</p>
+            <p>{{$memberships->gym_id}}</p>
+                @endforeach
+
+
+            </div>
             @include('memberships.create')
 @endsection

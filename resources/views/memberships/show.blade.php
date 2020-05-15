@@ -1,11 +1,8 @@
+
 @extends('layouts.dashboardAdmin')
 @section('content')
 
-
-
-
-
-<small>nom du member : {{$membership->id}} </small>
+<small>id : {{$membership->id}} </small>
 
     {!!Form::open(['action'=>['MembershipsController@destroy' ,$membership->id] , 'method' =>'POST' ])!!}
 
@@ -16,3 +13,4 @@
 
 <a href="/memberships/{{$membership->id}}/edit" class="btn btn-dark">Edit profile</a>
 @endsection
+

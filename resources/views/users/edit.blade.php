@@ -90,7 +90,7 @@
                         <td >
                             <div class ='form-group'>
 
-                            {!! Form::select('role',['Owner' => 'Propriétaire','Manager'=>'Gérant','User'=>'Utilisateur'],null,['class'=>'form-control','placeholder'=>'Choisir le Role']) !!}
+                            {!! Form::select('role',['Owner' => 'Propriétaire','Manager'=>'Gérant','User'=>'Utilisateur'],$user->role,['class'=>'form-control','placeholder'=>'Choisir le Role']) !!}
                       </tr>
 
 

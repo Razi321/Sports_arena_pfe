@@ -36,6 +36,8 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
 
+
+
         View::composer( '*', function ($view) {
 
             $course = Course::orderBy('created_at','desc')->paginate(5);
