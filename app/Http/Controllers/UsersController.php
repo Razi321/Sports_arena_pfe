@@ -6,8 +6,7 @@ use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Storage;
 use App\User;
-use App\Gym;
-use App\Feedback;
+use Illuminate\Auth;
 
 class UsersController extends Controller
 {
@@ -189,6 +188,16 @@ class UsersController extends Controller
         else
 
         return redirect('/register')->with('success','le compte est supprimé');
+    }
+
+    public function phoneLogin(Request $request){
+        $loginDetails = $request->only('email','password');
+
+        if(Auth::attempt($loginDetails)){
+            return response()->json(['message' => 'login successful', 'code' => 200]);
+        }else{
+            return response()->json(['message' => 'wrong login details', 'code' => 501]);
+        }
     }
 
 

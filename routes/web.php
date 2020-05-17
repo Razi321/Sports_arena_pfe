@@ -27,6 +27,7 @@ Route::resource('gyms','GymController');
 Route::resource('memberships','MembershipsController');
 Route::resource('feedback','FeedbacksController');
 Route::resource('courses','CoursesController');
+Route::resource('posts','PostsController');
 Route::get('/allGyms','PagesController@allgyms');
 Route::get('/managers','PagesController@managers');
 Route::get('/statistics','PagesController@statistics');
