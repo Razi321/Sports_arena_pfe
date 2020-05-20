@@ -18,7 +18,12 @@ class PostsController extends Controller
 
         return view('posts.index')->with('post', $post);
     }
+    public function indexp()
+    {
+        $post = Post::all();
 
+        return response()->json($post);
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -81,6 +86,7 @@ class PostsController extends Controller
         $post = Post::find($id);
         return view('posts.show')->with('post',$post);
     }
+
 
     /**
      * Show the form for editing the specified resource.

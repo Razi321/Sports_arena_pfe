@@ -19,4 +19,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::post('phoneLogin','UsersController@phoneLogin');
+Route::get('indexp','PostsController@indexp');
 

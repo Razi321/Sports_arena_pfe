@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Storage;
 use App\User;
-use Illuminate\Auth;
+use Illuminate\Support\Facades\Auth;
+use Validator;
 
 class UsersController extends Controller
 {
@@ -191,12 +192,22 @@ class UsersController extends Controller
     }
 
     public function phoneLogin(Request $request){
-        $loginDetails = $request->only('email','password');
+        $validator = Validator::make($request->all(), [
+            'email' => 'required|email',
+            'password' => 'required',
 
-        if(Auth::attempt($loginDetails)){
-            return response()->json(['message' => 'login successful', 'code' => 200]);
-        }else{
-            return response()->json(['message' => 'wrong login details', 'code' => 501]);
+        ]);
+        if ($validator->fails()) {
+            return response()->json(['error'=>$validator->errors()], 401);
+        }
+        if(Auth::attempt(['email' => $request->json('email'), 'password' => $request->json('password')])){
+            $user = Auth::user();
+            $success['token'] =  $user->createToken('MyApp')-> accessToken;
+            $success['name'] =  $user->name;
+            return response()->json(['success' => $user], $this-> successStatus);
+        }
+        else{
+            return response()->json(['error'=>'Unauthorised'], 401);
         }
     }
 
