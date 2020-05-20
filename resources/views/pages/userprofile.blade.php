@@ -4,7 +4,7 @@
 
         <!-- Profile widget -->
         <div class="bg-white shadow  overflow-hidden">
-            <div class="px-4 pt-0 pb-4 bg-dark">
+            <div class="px-4 pt-0 pb-4  cover">
                 <div class="media align-items-end profile-header">
                     <div class="profile mr-3"><img src="/storage/cover_images/{{auth::user()->cover_image}}"  alt="..." width="130" class="rounded mb-2 img-thumbnail"><a href="/users/{{auth::user()->id}}/edit" class="btn btn-dark btn-sm btn-block">Edit profile</a></div>
                     <div class="media-body mb-5 text-white">
@@ -62,7 +62,15 @@
                       </tr>
                       <tr>
                         <td class="tabspec">Role</td>
-                        <td >{{auth::user()->role}}</td>
+                        <td >        @if(auth::user()->role =='User')
+                            Utilisateur
+                        @elseif ( auth::user()->role =='Manager')
+                    Gérant
+                    @elseif ( auth::user()->role =='Owner')
+                Propriétaire
+            @else
+        Administrateur
+        @endif</td>
 
                       </tr>
                     </tbody>

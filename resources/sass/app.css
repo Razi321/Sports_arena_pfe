@@ -7,7 +7,7 @@
 @import url(c:\Users\Razi\Desktop\test\Sports_arena\resources\sass\bootstrap.min.css);
 body {
   overflow-x: hidden;
-  background-color: #a4b0be;
+  background-color: #f1f2f6;
 }
 
 #sidebar-wrapper {
@@ -67,6 +67,14 @@ body {
 
 .fin {
   color: red;
+}
+
+.txt_bold {
+  font-weight: bold;
+}
+
+.cover {
+  background-color: #30475e;
 }
 
 /*

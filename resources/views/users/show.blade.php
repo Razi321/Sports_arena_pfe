@@ -4,12 +4,12 @@
 
         <!-- Profile widget -->
         <div class="bg-white shadow  overflow-hidden">
-            <div class="px-4 pt-0 pb-4 bg-dark">
+            <div class="px-4 pt-0 pb-4  cover">
                 <div class="media align-items-end profile-header">
                     <div class="profile mr-3"><img  src="/storage/cover_images/{{$user->cover_image}}"  alt="..." width="130" class="rounded mb-2 img-thumbnail"><a href="/users/{{$user->id}}/edit" class="btn btn-dark btn-sm btn-block">Edit profile</a></div>
                     <div class="media-body mb-5 text-white">
                     <h4 class="mt-0 mb-0">{{$user->name}}</h4>
-                        <p class="small mb-4"> <i class="fa fa-map-marker mr-2"></i>San Farcisco</p>
+                        <p class="small mb-4"> <i class="fa fa-map-marker mr-2"></i>{{$user->adresse}}</p>
                     </div>
                 </div>
             </div>
@@ -62,7 +62,15 @@
 
                       <tr>
                         <td class="tabspec">Role</td>
-                        <td >{{$user->role}}</td>
+                        <td >        @if( $user->role =='User')
+                            Utilisateur
+                        @elseif ( $user->role =='Manager')
+                    Gérant
+                    @elseif ( $user->role =='Owner')
+                Propriétaire
+            @else
+        Administrateur
+        @endif</td>
 
                       </tr>
                     </tbody>

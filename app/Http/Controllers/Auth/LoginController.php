@@ -33,7 +33,7 @@ class LoginController extends Controller
         } else if ($user->role == 'Manager') {
             return redirect('/dashboardManager');
         }else if ($user->role == 'Owner') {
-            return redirect('/dashboardOwner');
+            return redirect('/dashboardAdmin');
         }
         else {
             return redirect('/home');
