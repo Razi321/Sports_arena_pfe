@@ -114,7 +114,8 @@ class UsersController extends Controller
     {
         $this -> validate($request ,[
             'name' => ['required',  'min:3'],
-            'email' => 'required'
+            'email' => 'required',
+            'role' => 'required'
 
 
         ]);
@@ -183,15 +184,15 @@ class UsersController extends Controller
         }
 
         $user->delete();
-        if($user->role =='Admin') {
-            return redirect('/users')->with('success','le compte est supprimé');
+        if(auth()->user()->role =='Admin') {
+            return redirect('/users')->with('success','utilisateur a été supprimé');
         }
         else
 
         return redirect('/register')->with('success','le compte est supprimé');
     }
 
-    public function phoneLogin(Request $request){
+  public function phoneLogin(Request $request){
         $validator = Validator::make($request->all(), [
             'email' => 'required|email',
             'password' => 'required',
