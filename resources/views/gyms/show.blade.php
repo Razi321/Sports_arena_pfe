@@ -15,13 +15,15 @@
 
                      {{--home info--}}
                  <div>
-                    <i  class="fa fa-home"  style="font-size:30px">  : </i>
+                    <i  class="fa fa-home"  style="font-size:30px">  : {{$gym->adress}} </i>
+
                 </div>
                 {{-- end home info--}}
 <hr>
                    {{--phone num --}}
                  <div>
-                    <i class="fa fa-phone-square"style="font-size:30px"> : </i>
+                    <i class="fa fa-phone-square"style="font-size:30px"> :{{$gym->phone_number}} </i>
+
                 </div>
                 {{-- end phone nim --}}
 
@@ -29,14 +31,14 @@
                  {{--instagram link--}}
                  <div>
                     <i class="fa fa-instagram" style="font-size:30px"> : </i>
-                    <a href="https://www.instagram.com/razimelliti/?hl=fr"></a>
+                    <a href="{{$gym->insta}}">Cliquer ici</a>
                 </div>
                 {{-- end instagram link--}}
                 <hr>
                 {{--facebook link--}}
                 <div>
                     <i class="fa fa-facebook-square" style="font-size:30px"> : </i>
-                    <a href="https://www.facebook.com/rmelliti/"></a>
+                    <a href="{{$gym->fb}}">Cliquez ici</a>
                 </div>
                 {{-- end facebook link--}}
                 </div>
@@ -47,7 +49,7 @@
 
 
         <div class="col-md-8 col-sm-8">
-            <div class="card gymcard">
+        <div class="card gymcard" style="height : 318px">
                 <div class="card-header"> à propos de nous</div>
 
                 <div class="card-body">

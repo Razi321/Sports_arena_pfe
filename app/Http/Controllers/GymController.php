@@ -41,6 +41,7 @@ class GymController extends Controller
         $this -> validate($request ,[
             'name' => 'required' ,
             'adress' => 'required' ,
+            'description' => 'required' ,
             'cover_image' => 'image|nullable|max:1999'
 
 
@@ -67,6 +68,10 @@ class GymController extends Controller
         //create gym
         $gym = new gym;
         $gym ->name =$request->input('name');
+        $gym ->description =$request->input('description');
+        $gym ->phone_number =$request->input('phone_number');
+        $gym ->fb =$request->input('fb');
+        $gym ->insta =$request->input('insta');
         $gym ->price_month =$request->input('price_month');
         $gym ->adress =$request->input('adress');
         $gym ->owner = auth()->user()->id;
@@ -139,6 +144,10 @@ class GymController extends Controller
 
         $gym ->name =$request->input('name');
         $gym ->adress =$request->input('adress');
+        $gym ->description =$request->input('description');
+        $gym ->phone_number =$request->input('phone_number');
+        $gym ->fb =$request->input('fb');
+        $gym ->insta =$request->input('insta');
         $gym ->price_month =$request->input('price_month');
         if($request->hasFile('cover_image')){
             $gym->cover_image = $fileNameToStore;

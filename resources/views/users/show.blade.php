@@ -76,7 +76,7 @@
                     </tbody>
                   </table>
             </div>
-            <div>
+            <div class="container-fluid">
 
 
                 @foreach ($user->memberships as $memberships)
@@ -87,5 +87,7 @@
 
 
             </div>
+            <div class="container-fluid">
             @include('memberships.create')
+            </div>
 @endsection
