@@ -32,7 +32,7 @@
         <a href="/gyms" class="list-group-item list-group-item-action bg-light">salles de sport</a>
         <a href="/feedback" class="list-group-item list-group-item-action bg-light">gerer les avis</a>
         <a href="/courses" class="list-group-item list-group-item-action bg-light">gerer les cours</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">item</a>
+        <a href="/memberships" class="list-group-item list-group-item-action bg-light">gerer les abonnements</a>
       </div>
     </div>
     <!-- /#sidebar-wrapper -->

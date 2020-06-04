@@ -9,6 +9,7 @@ use App\Gym;
 use App\User;
 use App\Course;
 use App\Feedback;
+use App\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
 use phpDocumentor\Reflection\Types\Integer;
@@ -35,20 +36,6 @@ class AppServiceProvider extends ServiceProvider
 
     public function boot()
     {
-
-
-
-        View::composer( '*', function ($view) {
-
-            $course = Course::orderBy('created_at','desc')->paginate(5);
-
-
-            $view->with('course', $course);
-        });
-
-
-
-
 
         View::composer( '*', function ($view) {
 

@@ -7,16 +7,14 @@
 
 
             <div class ='form-group'>
-                {{Form::label('course_id' , 'cour')}}
+                {{Form::label('course_id' , 'Identifiant du cour')}}
                 {{Form::text('course_id' , $membership->course_id, ['class' => 'form-control' ])}}
             </div>
             <div class ='form-group'>
-                {{Form::label('end_at' , 'fin abonnement')}}
+                {{Form::label('end_at' , "date d'expiration")}}
                 {{Form::text('end_at' , $membership->end_at, ['class' => 'form-control'])}}
             </div>
-            @foreach ($course as $course)
-  <p>cour : {{$course->name}} et identifiant : {{$course->id_course}}</p>
-        @endforeach
+
 
 
             {{Form::hidden('_method' , 'PUT')}}

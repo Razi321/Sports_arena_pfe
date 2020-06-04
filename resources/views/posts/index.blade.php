@@ -1,9 +1,12 @@
+
+
+
 @extends('layouts.app')
 @section('content')
-<h1>blog</h1>
+<h1>Articles</h1>
 <div class="container-fluid">
     <div class="row">
-      <div class="col-sm-12" ">
+      <div class="col-sm-12" >
         <a href="/posts/create" class="btn btn-primary">Ajouter article</a>
       </div>
     </div>

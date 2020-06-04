@@ -16,7 +16,7 @@
     </div>
 
     <div class ='form-group'>
-        {{Form::label('duration' , 'Duration')}}
+        {{Form::label('duration' , 'durée')}}
         {{Form::text('duration' , null, ['class' => 'form-control']) }}
     </div>
 
