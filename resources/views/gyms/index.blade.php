@@ -1,6 +1,3 @@
-
-
-
 @extends('layouts.dashboardAdmin')
 @section('content')
 <h1>Nos salles de sport</h1>
@@ -8,7 +5,7 @@
 <div class="container-fluid">
 
     <div class="row">
-      <div class="col-sm-12" ">
+      <div class="col-sm-12" >
         <a href="/gyms/create" class="btn btn-primary">Ajouter salle de sport</a>
       </div>
     </div>
@@ -28,8 +25,11 @@
             </div>
             <div class="col-md-8 col-sm-8">
                 <h2 >   <a href="/gyms/{{$gym->id}}"> {{$gym->name}} </a></h2>
-            <h5>prix par mois : {{$gym->price_month}}</h5>
-            <small>Written on {{$gym->created_at}} </small>
+                <small><span class="txt_bold"> Poriétaire </span> : {{$gym->user->name}} </small> <br>
+                <small> <span class="txt_bold"> Téléphone</span> :   {{$gym->phone_number}} </small><br>
+                <small> <span  class="txt_bold"> Adresse  </span>: {{$gym->adress}} </small> <br>
+                <small> <span  class="txt_bold"> Créé le </span> : {{$gym->created_at}}</small>
+
             </div>
         </div>
     </div>
@@ -47,7 +47,10 @@
             </div>
             <div class="col-md-4 col-sm-4">
                 <h2 >   <a href="/gyms/{{$gym->id}}"> {{$gym->name}} </a></h2>
-            <small>Written on {{$gym->created_at}} </small>
+                <small><span class="txt_bold"> Poriétaire </span> : {{$gym->user->name}} </small> <br>
+                <small> <span class="txt_bold"> Téléphone</span> :   {{$gym->phone_number}} </small><br>
+                <small> <span  class="txt_bold"> Adresse  </span>: {{$gym->adress}} </small> <br>
+                <small> <span  class="txt_bold"> Créé le </span> : {{$gym->created_at}}</small>
             </div>
         </div>
     </div>
