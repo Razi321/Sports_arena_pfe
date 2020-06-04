@@ -52,10 +52,10 @@ class AppServiceProvider extends ServiceProvider
 
         View::composer( '*', function ($view) {
 
-            $feedbacks = Feedback::orderBy('created_at','desc')->paginate(5);
+            $feedback = Feedback::all();
 
 
-            $view->with('feedback', $feedbacks);
+            $view->with('feedback', $feedback);
         });
 
 

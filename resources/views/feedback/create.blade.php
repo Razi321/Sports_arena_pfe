@@ -5,7 +5,7 @@
         <div class="form-group">
             {{Form::text('body', '', [ 'class' => 'form-control'])}}
         </div>
-        {{Form::submit('Enregistrer', ['class'=>'btn btn-primary'])}}
+        {{Form::submit('Enregistrer', ['class'=>'btn btn-success'])}}
     {!! Form::close() !!}
 
 
