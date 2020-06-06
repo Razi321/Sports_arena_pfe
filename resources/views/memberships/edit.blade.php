@@ -18,7 +18,7 @@
 
 
             {{Form::hidden('_method' , 'PUT')}}
-            {{Form::submit('submit' , ['class'=> 'btn btn-success'])}}
+            {{Form::submit('Enregistrer' , ['class'=> 'btn btn-success'])}}
             {!! Form::close() !!}
 
 

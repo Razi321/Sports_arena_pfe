@@ -184,12 +184,12 @@ class UsersController extends Controller
         }
 
         $user->delete();
-        if(auth()->user()->role =='Admin') {
+        if($user->role =='Admin') {
             return redirect('/users')->with('success','utilisateur a été supprimé');
         }
         else
 
-        return redirect('/register')->with('success','le compte est supprimé');
+        return redirect('/register')->with('success','le compte a été supprimé');
     }
 
   public function phoneLogin(Request $request){

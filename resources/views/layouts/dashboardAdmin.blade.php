@@ -16,6 +16,7 @@
   <!-- Custom styles for this template -->
   <!-- <link href="css/app.css" rel="stylesheet"> -->
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 </head>
 
@@ -28,11 +29,13 @@
       <div class="sidebar-heading">T-Cody </div>
       <div class="list-group list-group-flush">
         <a href="/dashboardAdmin" class="list-group-item list-group-item-action bg-light">accueil</a>
-        <a href="/users" class="list-group-item list-group-item-action bg-light">Utilisateurs</a>
-        <a href="/gyms" class="list-group-item list-group-item-action bg-light">salles de sport</a>
-        <a href="/feedback" class="list-group-item list-group-item-action bg-light">gerer les avis</a>
-        <a href="/courses" class="list-group-item list-group-item-action bg-light">gerer les cours</a>
-        <a href="/memberships" class="list-group-item list-group-item-action bg-light">gerer les abonnements</a>
+        <a href="/users" class="list-group-item list-group-item-action bg-light">Gerer les utilisateurs</a>
+        <a href="/gyms" class="list-group-item list-group-item-action bg-light">Gerer les salles de sport</a>
+        <a href="/feedback" class="list-group-item list-group-item-action bg-light">Gerer les avis</a>
+        <a href="/courses" class="list-group-item list-group-item-action bg-light">Gerer les cours</a>
+        <a href="/memberships" class="list-group-item list-group-item-action bg-light">Gerer les abonnements</a>
+        <a href="/statistics" class="list-group-item list-group-item-action bg-light">Consulter statistiques</a>
+        <a href="/posts" class="list-group-item list-group-item-action bg-light">Gerer les articles</a>
       </div>
     </div>
     <!-- /#sidebar-wrapper -->

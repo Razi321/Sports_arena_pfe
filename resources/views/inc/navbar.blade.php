@@ -10,11 +10,11 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto  ">
-                <li ><a class="navlink" href="#">Item </a></li>
-                <li ><a class="navlink" href="#">Item </a></li>
-                <li ><a class="navlink" href="#">Item </a></li>
-                <li ><a class="navlink" href="#">Item </a></li>
-                <li ><a class="navlink" href="#">Item </a></li>
+                <li ><a class="navlink" href="#">Accueil </a></li>
+                <li ><a class="navlink" href="#">A propos </a></li>
+                <li ><a class="navlink" href="#">Tarifs </a></li>
+                <li ><a class="navlink" href="#">Blog</a></li>
+
 
             </ul>
 

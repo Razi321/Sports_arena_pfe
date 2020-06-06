@@ -1,5 +1,6 @@
 
-<h1>Ajouter abonnement</h1>
+
+<h2 class="text-center">Ajouter abonnement</h2>
     {!!Form::open(['action' => 'MembershipsController@store' , 'method' => 'POST' ]) !!}
 
 

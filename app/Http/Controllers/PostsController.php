@@ -43,7 +43,7 @@ class PostsController extends Controller
     public function store(Request $request)
     {
         $this -> validate($request ,[
-            'video' => 'mimetypes:video/avi,video/mpeg,video/mp4|nullable'
+            'video' => 'mimetypes:video/avi,video/mpeg,video/mp4|required'
 
 
         ]);

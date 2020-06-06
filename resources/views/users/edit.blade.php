@@ -7,7 +7,7 @@
      <div class="bg-white shadow  overflow-hidden">
         <div class="px-4 pt-0 pb-4  cover">
             <div class="media align-items-end profile-header">
-                <div class="profile mr-3"><img src="/storage/cover_images/{{$user->cover_image}}"  alt="..." width="130" class="rounded mb-2 img-thumbnail"><a href="/users/{{$user->id}}/edit" class="btn btn-dark btn-sm btn-block">Edit profile</a></div>
+                <div class="profile mr-3"><img src="/storage/cover_images/{{$user->cover_image}}"  alt="..." width="130" class="rounded mb-2 img-thumbnail"><a href="/users/{{$user->id}}/edit" class="btn btn-dark btn-sm btn-block">Modifier profil</a></div>
                 <div class="media-body mb-5 text-white">
                 <h4 class="mt-0 mb-0">{{$user->name}}</h4>
                     <p class="small mb-4"> <i class="fa fa-map-marker mr-2"></i>{{$user->adresse}}</p>
@@ -94,14 +94,7 @@
                       </tr>
 
 
-                      <tr>
-                        <td class="tabspec" >{{Form::label('member_in' , 'membre a ')}}<br>
-                            <small>l'identifiant de votre salle de sport est : {{auth::user()->member_in}}</small></td>
-                        <td><div class ='form-group'>
 
-                            {{Form::text('member_in' , $user->member_in, ['class' => 'form-control' , 'placeholder' => 'identifiant du salle'])}} </div></td>
-
-                      </tr>
 @elseif(auth::user()->role =='Owner')
 <tr>
     <td class="tabspec">{{Form::label('role' , 'Role')}}</td>
@@ -136,9 +129,13 @@
                     </tbody>
                   </table>
             </div>
-            {{Form::hidden('_method' , 'PUT')}}
-            {{Form::submit('submit' , ['class'=> 'btn btn-success'])}}
+
+            <div class="container-fluid">
+                {{Form::hidden('_method' , 'PUT')}}
+            {{Form::submit('Enregistrer' , ['class'=> 'btn btn-success'])}}
             {!! Form::close() !!}
+            </div>
+
 
 
 

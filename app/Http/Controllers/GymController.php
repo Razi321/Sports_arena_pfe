@@ -78,7 +78,7 @@ class GymController extends Controller
         $gym->cover_image = $fileNameToStore;
 
         $gym->save();
-        return redirect('/gyms')->with('success','salle de sport  ajouter');
+        return redirect('/gyms')->with('success','la salle de sport a été ajouté');
 
     }
 
@@ -174,6 +174,6 @@ class GymController extends Controller
         }
 
         $gym->delete();
-        return redirect('/gyms')->with('success','salle de sport supprimé');
+        return redirect('/gyms')->with('success','la salle de sport a été supprimé');
     }
 }

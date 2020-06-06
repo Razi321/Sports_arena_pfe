@@ -20,7 +20,7 @@ public function belongGym(){
     return $this->belongsTo('App\Gym');
 }
 public function memberIncourse(){
-    return $this->belongsTo('App\Course');
+    return $this->belongsTo('App\Course','course_id');
 }
 
 }
