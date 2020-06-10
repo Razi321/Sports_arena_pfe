@@ -30,6 +30,7 @@ Route::resource('courses','CoursesController');
 Route::resource('posts','PostsController');
 Route::get('/allGyms','PagesController@allgyms');
 Route::get('/managers','PagesController@managers');
+Route::get('/blog','PagesController@blog');
 Route::get('/statistics','PagesController@statistics');
 
 Route::get('/userprofile','PagesController@userprofile');

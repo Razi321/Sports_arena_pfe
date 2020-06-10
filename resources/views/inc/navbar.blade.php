@@ -13,7 +13,7 @@
                 <li ><a class="navlink" href="#">Accueil </a></li>
                 <li ><a class="navlink" href="#">A propos </a></li>
                 <li ><a class="navlink" href="#">Tarifs </a></li>
-                <li ><a class="navlink" href="#">Blog</a></li>
+                <li ><a class="navlink" href="/blog">Blog</a></li>
 
 
             </ul>

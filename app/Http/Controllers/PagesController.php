@@ -29,6 +29,10 @@ class PagesController extends Controller
     public function statistics() {
         return view('statistics.statistics');
     }
+
+    public function blog() {
+        return view('pages.blog');
+    }
 }
 
 

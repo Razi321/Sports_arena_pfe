@@ -39,6 +39,12 @@ class AppServiceProvider extends ServiceProvider
 
         View::composer( '*', function ($view) {
 
+            $post= Post::orderBy('created_at','desc')->paginate(8);
+            $view->with('post', $post);
+        });
+
+        View::composer( '*', function ($view) {
+
             $feedback = Feedback::all();
 
 
