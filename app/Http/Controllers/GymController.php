@@ -43,10 +43,6 @@ class GymController extends Controller
             'adress' => 'required' ,
             'description' => 'required' ,
             'cover_image' => 'image|nullable|max:1999'
-
-
-
-
         ]);
 
           // Handle File Upload

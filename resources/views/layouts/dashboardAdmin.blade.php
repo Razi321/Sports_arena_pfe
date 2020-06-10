@@ -36,6 +36,7 @@
         <a href="/memberships" class="list-group-item list-group-item-action bg-light">Gerer les abonnements</a>
         <a href="/statistics" class="list-group-item list-group-item-action bg-light">Consulter statistiques</a>
         <a href="/posts" class="list-group-item list-group-item-action bg-light">Gerer les articles</a>
+        <a href="/payment" class="list-group-item list-group-item-action bg-light">consulter les extraits de payment</a>
       </div>
     </div>
     <!-- /#sidebar-wrapper -->

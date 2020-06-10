@@ -33,4 +33,5 @@ Route::get('/managers','PagesController@managers');
 Route::get('/statistics','PagesController@statistics');
 
 Route::get('/userprofile','PagesController@userprofile');
+Route::resource('payment','PaymentController');
 
