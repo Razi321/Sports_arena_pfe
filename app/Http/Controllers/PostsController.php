@@ -14,9 +14,9 @@ class PostsController extends Controller
      */
     public function index()
     {
-        $post = Post::orderBy('created_at','desc')->paginate(5);
+        $posts = Post::orderBy('created_at','desc')->paginate(5);
 
-        return view('posts.index')->with('post', $post);
+        return view('posts.index')->with('posts', $posts);
     }
     public function indexp()
     {
@@ -73,7 +73,7 @@ class PostsController extends Controller
         $post ->title =$request->input('title');
         $post->video = $fileNameToStore;
         $post->save();
-        return redirect('/posts')->with('success','jouté');
+        return redirect('/posts')->with('success',"l'article a été ajouté");
     }
     /**
      * Display the specified resource.

@@ -76,5 +76,20 @@
                     </tbody>
                   </table>
             </div>
+            <div class="container-fluid">
 
+                <h2 class="text-center">votre abonnement</h2> <br>
+                  @foreach ($user->memberships as $memberships)
+
+
+                  <div class="container">
+                      <img src="/storage/courses_images/{{$memberships->memberIncourse->image}} "alt="Avatar" class="image">
+                      <div class="text-block">
+                          <p>Abonné à : {{$memberships->memberIncourse->name}}</p>
+                          <p>Prix par mois : {{$memberships->memberIncourse->price_month}} DT</p>
+                          <p> Durée : {{$memberships->memberIncourse->duration}}</p>
+                          <p>Fréquence : {{$memberships->memberIncourse->frequency}}</p>
+                          <p>Date d'expiration : {{$memberships->end_at}}</p></div>
+                      </div>
+                    </div>
 @endsection

@@ -4,7 +4,7 @@
 <h1>Les Utilisateurs</h1>
 <div class="container-fluid">
     <div class="row">
-      <div class="col-sm-12" ">
+      <div class="col-sm-12" >
         <a href="/users/create" class="btn btn-primary">Ajouter un utiliasateur</a>
       </div>
     </div>
