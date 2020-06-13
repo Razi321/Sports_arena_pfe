@@ -80,7 +80,6 @@
 
 
 
-{{$gyms->links()}}
 
 @else
 <p>pas de salle de sport encore</p>

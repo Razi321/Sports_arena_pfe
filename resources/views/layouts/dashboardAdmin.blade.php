@@ -29,6 +29,16 @@
       <div class="sidebar-heading">T-Cody </div>
       <div class="list-group list-group-flush">
         <a href="/dashboardAdmin" class="list-group-item list-group-item-action bg-light">accueil</a>
+
+        @if(auth::user()->role =='Admin')
+        <a href="/users" class="list-group-item list-group-item-action bg-light">Gerer les utilisateurs</a>
+        <a href="/gyms" class="list-group-item list-group-item-action bg-light">Gerer les salles de sport</a>
+        <a href="/statistics" class="list-group-item list-group-item-action bg-light">Consulter statistiques</a>
+        <a href="/payment" class="list-group-item list-group-item-action bg-light">consulter les extraits de payment</a>
+
+
+
+        @elseif(auth::user()->role =='Owner')
         <a href="/users" class="list-group-item list-group-item-action bg-light">Gerer les utilisateurs</a>
         <a href="/gyms" class="list-group-item list-group-item-action bg-light">Gerer les salles de sport</a>
         <a href="/feedback" class="list-group-item list-group-item-action bg-light">Gerer les avis</a>
@@ -37,7 +47,16 @@
         <a href="/statistics" class="list-group-item list-group-item-action bg-light">Consulter statistiques</a>
         <a href="/posts" class="list-group-item list-group-item-action bg-light">Gerer les articles</a>
         <a href="/managers" class="list-group-item list-group-item-action bg-light">Gerer les Gérants</a>
-        <a href="/payment" class="list-group-item list-group-item-action bg-light">consulter les extraits de payment</a>
+
+        @elseif(auth::user()->role =='Manager')
+        <a href="/users" class="list-group-item list-group-item-action bg-light">Gerer les utilisateurs</a>
+        <a href="/gyms" class="list-group-item list-group-item-action bg-light">Gerer les salles de sport</a>
+        <a href="/feedback" class="list-group-item list-group-item-action bg-light">Gerer les avis</a>
+        <a href="/courses" class="list-group-item list-group-item-action bg-light">Gerer les cours</a>
+        <a href="/memberships" class="list-group-item list-group-item-action bg-light">Gerer les abonnements</a>
+        <a href="/posts" class="list-group-item list-group-item-action bg-light">Gerer les articles</a>
+  @endif
+
       </div>
     </div>
     <!-- /#sidebar-wrapper -->

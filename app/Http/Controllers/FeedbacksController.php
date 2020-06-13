@@ -114,7 +114,12 @@ class FeedbacksController extends Controller
 
 
         $feedback->delete();
-        return back();
+        if(auth()->user()->role =='Owner') {
+            return redirect('/feedback')->with('success',"l'avis a été supprimé");
+        }
+        else
+
+        return back()->with('success',"l'avis a été supprimé");
 
     }
 }

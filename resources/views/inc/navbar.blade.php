@@ -12,8 +12,9 @@
             <ul class="navbar-nav mr-auto  ">
                 <li ><a class="navlink" href="#">Accueil </a></li>
                 <li ><a class="navlink" href="#">A propos </a></li>
-                <li ><a class="navlink" href="#">Tarifs </a></li>
+                <li ><a class="navlink" href="payment/create">Tarifs </a></li>
                 <li ><a class="navlink" href="/blog">Blog</a></li>
+                <li ><a class="navlink" href="/allGyms">Nos salles</a></li>
 
 
             </ul>

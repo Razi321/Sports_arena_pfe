@@ -15,9 +15,9 @@ class GymController extends Controller
      */
     public function index()
     {
-        $gyms = Gym::orderBy('created_at','desc')->paginate(5);
-
-        return view('gyms.index')->with('gyms', $gyms);
+        $gym = Gym::all()
+;
+        return view('gyms.index')->with('gym', $gym);
     }
 
     /**

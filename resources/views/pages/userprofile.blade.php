@@ -80,8 +80,6 @@
 
                 <h2 class="text-center">votre abonnement</h2> <br>
                   @foreach ($user->memberships as $memberships)
-
-
                   <div class="container">
                       <img src="/storage/courses_images/{{$memberships->memberIncourse->image}} "alt="Avatar" class="image">
                       <div class="text-block">
@@ -91,5 +89,7 @@
                           <p>Fréquence : {{$memberships->memberIncourse->frequency}}</p>
                           <p>Date d'expiration : {{$memberships->end_at}}</p></div>
                       </div>
+                      @endforeach
                     </div>
+
 @endsection

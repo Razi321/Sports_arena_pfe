@@ -20,4 +20,18 @@
         </div>
     </div>
 </div>
+
+@endsection
+
+@section('scripts')
+<script>
+
+
+    //PICTURE COVER SECTION
+	$('.set-bg').each(function() {
+		var bg = $(this).data('setbg');
+		$(this).css('background-image', 'url(' + bg + ')');
+	});
+    //PICTURE COVER SECTION END
+</script>
 @endsection

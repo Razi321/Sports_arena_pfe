@@ -35,7 +35,7 @@
 
 
 @else
-<p>no membership</p>
+<p>aucun abonnement</p>
 @endif
 
 @endsection
