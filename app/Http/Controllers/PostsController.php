@@ -130,7 +130,7 @@ class PostsController extends Controller
         $post->delete();
 
 
-        return redirect('/posts')->with('success','le post est supprimé');
+        return redirect('/posts')->with('success',' le poste a été supprimé');
     }
     }
 

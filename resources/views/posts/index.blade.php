@@ -15,10 +15,12 @@
 
 
     <div class ='card p-3 mt-3 mb-3'>
+
+
             <h2 >   <a href="/posts/{{$post->id}}"> {{$post->title}} </a></h2>
-            <small>Written on {{$post->created_at}} </small>
-
-
+            <small> <span class="txt_bold">Description :</span>  {{$post->body}} </small>
+            <small>  <span class="txt_bold">Ajouté le :</span>  {{$post->created_at}} </small>
+            <h5>   <a href="/posts/{{$post->id}}"> Voir plus </a></h5>
     </div>
 
 @endforeach
